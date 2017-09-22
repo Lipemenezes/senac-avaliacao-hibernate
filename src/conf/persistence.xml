@@ -2,6 +2,10 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="senac_avaliacao_hibernatePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>entity.Person</class>
+    <class>entity.Address</class>
+    <class>entity.NaturalPerson</class>
+    <class>entity.LegalPerson</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/avaliacao_senac"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

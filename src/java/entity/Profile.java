@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author Aluno
+ * @author Felipe Menezes
  */
 @Entity
 @Table(name = "profile")

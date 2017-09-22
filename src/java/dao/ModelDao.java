@@ -11,7 +11,7 @@ import org.hibernate.Session;
 
 /**
  *
- * @author Aluno
+ * @author Felipe Menezes
  * @param <T>
  * @param <ID>
  */

@@ -5,6 +5,10 @@
  */
 package dao;
 
+import entity.Address;
+import entity.LegalPerson;
+import entity.NaturalPerson;
+import entity.Person;
 import entity.Profile;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +19,7 @@ import org.hibernate.cfg.Configuration;
  * Hibernate Utility class with a convenient method to get Session Factory
  * object.
  *
- * @author Aluno
+ * @author Felipe Menezes
  */
 public class HibernateUtil {
 
@@ -25,6 +29,10 @@ public class HibernateUtil {
         try {
              Configuration cfg = new Configuration();
              cfg.addAnnotatedClass(Profile.class);
+             cfg.addAnnotatedClass(Address.class);
+             cfg.addAnnotatedClass(Person.class);
+             cfg.addAnnotatedClass(NaturalPerson.class);
+             cfg.addAnnotatedClass(LegalPerson.class);
              
              cfg.configure("/dao/hibernate.cfg.xml");
              StandardServiceRegistryBuilder build = 

@@ -9,8 +9,8 @@ import entity.Profile;
 
 /**
  *
- * @author Aluno
+ * @author Felipe Menezes
  */
-public interface ProfileDao extends BaseDao<Profile, Long>{
+public interface ProfileDao extends BaseDao<Profile, Long> {
     
 }

@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 
 /**
  *
- * @author Aluno
+ * @author Felipe Menezes
  */
 public abstract class BaseDaoImpl<T, ID> implements BaseDao<T, ID>{
 

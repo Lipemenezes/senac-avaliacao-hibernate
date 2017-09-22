@@ -13,7 +13,7 @@ import org.hibernate.Session;
 
 /**
  *
- * @author Aluno
+ * @author Felipe Menezes
  */
 public class ProfileDaoImpl
         extends BaseDaoImpl<Profile, Long>
