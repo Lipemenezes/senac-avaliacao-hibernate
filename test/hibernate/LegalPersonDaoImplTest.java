@@ -7,7 +7,6 @@ package hibernate;
 
 import dao.HibernateUtil;
 import dao.LegalPersonDaoImpl;
-import entity.Profile;
 import java.util.Date;
 import java.util.List;
 import org.hibernate.Query;
@@ -17,6 +16,7 @@ import static org.junit.Assert.*;
 import util.Generator;
 import entity.LegalPerson;
 import dao.LegalPersonDao;
+import entity.Address;
 
 /**
  *
@@ -26,6 +26,8 @@ public class LegalPersonDaoImplTest {
     private LegalPerson legalPerson;
     private LegalPersonDao legalPersonDao;
     private Session session;
+    private Address address = new Address(null, "endereco_natural", "bairro_natural", 
+            "cidade_natural", "estado_natural");
 
     public LegalPersonDaoImplTest() {
         legalPersonDao = new LegalPersonDaoImpl();
@@ -36,38 +38,42 @@ public class LegalPersonDaoImplTest {
         session = HibernateUtil.openSession();
         Date date = new Date();
         legalPerson
-                = new Profile(null, Generator.randomString() + "_save", 
-                        date, "obs");
-        legalPersonDao.saveOrUpdate(profile, session);
+                = new LegalPerson(null, (Generator.randomString() + "_save"), 
+                Generator.randomString(), Generator.randomString(), 
+                        Generator.randomString(), Generator.randomString(),
+                        address
+                        );
+        
+        legalPersonDao.saveOrUpdate(legalPerson, session);
         session.close();
 
-        assertNotNull(profile.getId());
+        assertNotNull(legalPerson.getId());
     }
 
     @Test
     public void testUpdate() {
-        createPerfilIfNotExists();
+        createLegalPersonIfNotExists();
         session = HibernateUtil.openSession();
-        profile.setName(Generator.randomString() + "_update");
+        legalPerson.setName(Generator.randomString() + "_update");
         legalPersonDao.saveOrUpdate(legalPerson, session);
         
-        Profile updatedPerfil = profileDao.
-                searchById(profile.getId(), session);
+        LegalPerson updatedLegalPerson = legalPersonDao.
+                searchById(legalPerson.getId(), session);
         
-        assertEquals(profile.getName(), updatedPerfil.getName());
+        assertEquals(legalPerson.getName(), updatedLegalPerson.getName());
         
     }
 
     @Test
     public void testListAll() {
-        createPerfilIfNotExists();
+        createLegalPersonIfNotExists();
         session = HibernateUtil.openSession();
         List<LegalPerson> list = legalPersonDao.listAll(session);
         
         assertFalse(list.isEmpty());
     }
 
-    private void createPerfilIfNotExists() {
+    private void createLegalPersonIfNotExists() {
         session = HibernateUtil.openSession();
         Query consulta
                 = session.createQuery("select max(id) from LegalPerson");

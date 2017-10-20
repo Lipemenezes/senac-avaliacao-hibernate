@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import util.Generator;
 
 /**
  *
@@ -27,8 +28,9 @@ public class NaturalPerson extends Person implements Serializable {
     public NaturalPerson() {
     }
 
-    public NaturalPerson(String cpf, String rg, Long id, String name, String phone, String email) {
-        super(id, name, phone, email);
+    public NaturalPerson(Long id, String cpf, String rg, String name, 
+            String phone, String email, Address address) {
+        super(id, name, phone, email, address);
         this.cpf = cpf;
         this.rg = rg;
     }

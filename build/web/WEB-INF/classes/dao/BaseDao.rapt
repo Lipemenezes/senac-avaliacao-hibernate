@@ -1,0 +1,5 @@
+entity/LegalPerson_.java
+entity/NaturalPerson_.java
+entity/Person_.java
+entity/Profile_.java
+entity/Address_.java

@@ -30,8 +30,9 @@ public class LegalPerson extends Person implements Serializable {
     
     }
 
-    public LegalPerson(String cnpj, String stateRegistration, Long id, String name, String phone, String email) {
-        super(id, name, phone, email);
+    public LegalPerson(Long id, String cnpj, String stateRegistration, String name, 
+            String phone, String email, Address address) {
+        super(id, name, phone, email, address);
         this.cnpj = cnpj;
         this.stateRegistration = stateRegistration;
     }

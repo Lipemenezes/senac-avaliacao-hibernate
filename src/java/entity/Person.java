@@ -6,6 +6,7 @@
 package entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import util.Generator;
 
 /**
  *
@@ -34,17 +36,19 @@ public class Person implements Serializable {
     private String phone; 
     private String email;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
     public Person() {
     }
 
-    public Person(Long id, String name, String phone, String email) {
+    public Person(Long id, String name, String phone, String email, 
+            Address address) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.address = address;
     }
     
     public Long getId() {
@@ -78,9 +82,11 @@ public class Person implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    
-    
+
+    public Address getAddress() {
+        return address;
+    }
+        
     @Override
     public int hashCode() {
         int hash = 0;

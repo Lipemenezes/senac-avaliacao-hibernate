@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Felipe%20Menezes/workspace/senac-avaliacao-hibernate/src/java/dao/BaseDao.java</file>
+            <file>file:/D:/Felipe%20Menezes/workspace/senac-avaliacao-hibernate/test/hibernate/ProfileDaoImplTest.java</file>
+            <file>file:/D:/Felipe%20Menezes/workspace/senac-avaliacao-hibernate/src/java/dao/LegalPersonDao.java</file>
+            <file>file:/D:/Felipe%20Menezes/workspace/senac-avaliacao-hibernate/src/java/dao/LegalPersonDaoImpl.java</file>
+            <file>file:/D:/Felipe%20Menezes/workspace/senac-avaliacao-hibernate/test/hibernate/LegalPersonDaoImplTest.java</file>
         </group>
     </open-files>
 </project-private>
