@@ -72,7 +72,7 @@ public class NaturalPersonDaoImplTest {
         assertFalse(list.isEmpty());
     }
 
-    private void createNaturalPersonIfNotExists() {
+    public NaturalPerson createNaturalPersonIfNotExists() {
         session = HibernateUtil.openSession();
         Query consulta
                 = session.createQuery("select max(id) from NaturalPerson");
@@ -86,6 +86,7 @@ public class NaturalPersonDaoImplTest {
                     naturalPersonDao.searchById(id, session);
             session.close();
         }
-
+        
+        return naturalPerson;
     }
 }
